@@ -357,7 +357,8 @@ nav li.active {
     bottom: 15px;
     left: 15px;
     width: auto;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: #FF4B4B;
+    color: #FF4B4B;
     z-index: 7;
     opacity: 0;
     visibility: hidden;
