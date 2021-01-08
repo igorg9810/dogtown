@@ -357,7 +357,7 @@ nav li.active {
     bottom: 15px;
     left: 15px;
     width: auto;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(23, 23, 24, 0.9);
     z-index: 7;
     opacity: 0;
     visibility: hidden;
@@ -373,7 +373,7 @@ nav li.active {
 
 .hover-text h3{
     margin: 0;
-    color: #fff;
+    color: rgb(236, 233, 233);
 }
 
 .item-hover .hover-text {
@@ -383,6 +383,10 @@ nav li.active {
     left: 0;
     text-align: center;
     right: 0;
+}
+
+.button-action {
+    background-color: rgba(164, 85, 196, 0.9);
 }
 
 a {

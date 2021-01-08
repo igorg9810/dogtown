@@ -151,3 +151,8 @@ def cocker(request):
 
     # Render the HTML template cocker.html with the data in the context variable
     return render(request, 'cocker.html', context=context)
+
+def place_order(request, pk):
+    # YOUR_OBJECT.objects.filter(pk=pk).update(views=F('views')+1)
+    print("We've placed an order for your item")
+    return HttpResponseRedirect(request.GET.get('next'))
