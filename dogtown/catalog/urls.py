@@ -13,4 +13,5 @@ urlpatterns = [
     path('bulldog', views.bulldog, name='bulldog'),
     path('dalmatian', views.dalmatian, name='dalmatian'),
     path('cocker', views.cocker, name='cocker'),
+    path('place_order/<str:item_name>', views.place_order, name='place_order'),
 ]

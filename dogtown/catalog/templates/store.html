@@ -65,6 +65,9 @@
         </div>
         <div class="col-sm-10">{% block content %}{% endblock %}</div>
       </div>
+      {% if order_received %}
+        <h2>Ваш заказ на {{ item }} принят в обработку!</h2>
+      {% endif %}
     </header>
 
     <div class="section-title">
@@ -84,7 +87,7 @@
         <div class="row">
           <div class="fw mix-container home-gallery">
               <div class="mix portrait">
-               <a target="_blank" class="thumb-a">
+               <a href="{% url 'place_order' 'Pumpkin formula' %}" class="thumb-a">
                   <div class="item-hover button-action">
                     <div class="hover-text"><h3>Купить</h3></div>
                   </div>
@@ -94,7 +97,7 @@
                </a>
             </div>
             <div class="mix landscape portrait product">
-               <a target="_blank" class="thumb-a">
+               <a href="{% url 'place_order' 'Lightweight care' %}" class="thumb-a">
                   <div class="item-hover">
                     <div class="hover-text button-action"><h3>Купить</h3></div>
                   </div>
@@ -104,7 +107,7 @@
                </a>
             </div>
             <div class="mix landscape product">
-               <a target="_blank" class="thumb-a">
+               <a href="{% url 'place_order' 'Miocane food' %}" class="thumb-a">
                   <div class="item-hover button-action">
                     <div class="hover-text"><h3>Купить</h3></div>
                   </div>
@@ -114,7 +117,7 @@
                </a>
             </div>
             <div class="mix landscape portrait">
-               <a target="_blank" class="thumb-a">
+               <a href="{% url 'place_order' 'Address necklace' %}" class="thumb-a">
                   <div class="item-hover button-action">
                     <div class="hover-text"><h3>Купить</h3></div>
                   </div>
@@ -124,7 +127,7 @@
                </a>
             </div>
             <div class="mix landscape product">
-               <a target="_blank" class="thumb-a">
+               <a href="{% url 'place_order' 'Ear drops' %}" class="thumb-a">
                   <div class="item-hover button-action">
                     <div class="hover-text"><h3>Купить</h3></div>
                   </div>
@@ -134,7 +137,7 @@
                </a>
             </div>
             <div class="mix portrait">
-               <a target="_blank" class="thumb-a">
+               <a href="{% url 'place_order' 'Pincet' %}" class="thumb-a">
                   <div class="item-hover button-action">
                     <div class="hover-text"><h3>Купить</h3></div>
                   </div>
@@ -144,7 +147,7 @@
                </a>
             </div>
             <div class="mix portrait product">
-               <a target="_blank" class="thumb-a">
+               <a href="{% url 'place_order' 'Advokat' %}" class="thumb-a">
                   <div class="item-hover button-action">
                     <div class="hover-text"><h3>Купить</h3></div>
                   </div>
@@ -154,7 +157,7 @@
                </a>
             </div>
             <div class="mix landscape portrait product">
-               <a target="_blank" class="thumb-a">
+               <a href="{% url 'place_order' 'Diapers' %}" class="thumb-a">
                   <div class="item-hover button-action">
                     <div class="hover-text"><h3>Купить</h3></div>
                   </div>

@@ -1,4 +1,10 @@
 from django.shortcuts import render
+from datetime import datetime
+from django.http import HttpResponse
+import time
+import hashlib
+
+from .models import Order, Item
 
 # Create your views here.
 
@@ -152,7 +158,19 @@ def cocker(request):
     # Render the HTML template cocker.html with the data in the context variable
     return render(request, 'cocker.html', context=context)
 
-def place_order(request, pk):
+def place_order(request, item_name):
     # YOUR_OBJECT.objects.filter(pk=pk).update(views=F('views')+1)
-    print("We've placed an order for your item")
-    return HttpResponseRedirect(request.GET.get('next'))
+    print("We've placed an order for your item " + item_name)
+    h1 = hashlib.sha1((item_name + str(request.user) + str(datetime.now())).encode("utf-8"))
+    order_id = h1.hexdigest()
+    h2 = hashlib.sha1((item_name + str(500)).encode("utf-8"))
+    item_id = h2.hexdigest()
+    item = Item.objects.get_or_create(item_id = item_id, name = item_name, price = 500)
+    order = Order(item = item[0], customer = request.user, date = datetime.now(), order_id = order_id)
+    order.save()
+
+    context = {
+        "order_received": True,
+        "item": item_name
+    }
+    return render(request, 'store.html', context=context)
