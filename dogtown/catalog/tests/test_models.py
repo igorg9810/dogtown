@@ -15,12 +15,17 @@ class ItemModelTest(TestCase):
         field_label = item._meta.get_field('name').verbose_name
         self.assertEqual(field_label, 'name')
 
-    def test_first_name_max_length(self):
+    def test_name_max_length(self):
         item = Item.objects.get(id=1)
         max_length = item._meta.get_field('name').max_length
+        self.assertEqual(max_length, 20)
+
+    def test_item_id_max_length(self):
+        item = Item.objects.get(id=1)
+        max_length = item._meta.get_field('item_id').max_length
         self.assertEqual(max_length, 32)
 
-    def test_object_name_is_last_name_comma_first_name(self):
+    def test_object_name_is_name(self):
         item = Item.objects.get(id=1)
         expected_object_name = f'{item.name}'
         self.assertEqual(expected_object_name, str(item))
